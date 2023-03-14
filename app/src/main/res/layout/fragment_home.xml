@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Library Management"
+        android:textSize="30sp"
+        android:fontFamily="casual"
+        android:textColor= "@color/DarkGreen"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/tienne"
+                android:text="Sort by Category"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="@color/greenBright"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:background="@color/white"
+                                android:src="@drawable/cse" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="Computer Science and Enginering"
+                                android:textColor="@color/white"
+                                android:textSize="17sp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="@color/darkblue"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:background="@color/white"
+                                android:src="@drawable/infot" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="Information Technology"
+                                android:textColor="@color/white"
+                                android:textSize="17sp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="@color/Red"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:background="@color/white"
+                                android:src="@drawable/eces" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="Electronics and Communication Enginering"
+                                android:textColor="@color/white"
+                                android:textSize="17sp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/tienne"
+                android:text="Sort by Name"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sortNameRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>
