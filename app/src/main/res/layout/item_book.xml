@@ -5,26 +5,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="10dp"
     app:cardCornerRadius="10dp"
-    android:layout_margin="16dp">
+    android:layout_margin="5dp"
+    android:id="@+id/cardvid"
+    android:backgroundTint="@color/teal_200">
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginVertical="6dp"
+        android:layout_marginVertical="2dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/book"/>
+            android:layout_width="120dp"
+            android:layout_height="170dp"
+            android:src="@drawable/book1"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="15dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -35,10 +37,10 @@
 
 
                 <TextView
-                    android:id="@+id/BookName"
+                    android:id="@+id/userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="6dp"
                     android:text="Arya"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -54,7 +56,7 @@
 
 
                 <TextView
-                    android:id="@+id/AuthorName"
+                    android:id="@+id/rollNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -84,6 +86,27 @@
                     android:textSize="20sp"/>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:id="@+id/descrpt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Sescription"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
