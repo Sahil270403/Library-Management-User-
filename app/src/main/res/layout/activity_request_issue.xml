@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Request_issue">
+    tools:context=".Request_issue"
+    android:background="@drawable/gradient_my">
 
     <ImageView
         android:id="@+id/imageView1"
@@ -87,6 +88,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="612dp"
         android:backgroundTint="@color/teal_200"
+        android:elevation="5dp"
         android:text="Request issue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

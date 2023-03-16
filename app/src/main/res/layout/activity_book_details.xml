@@ -44,7 +44,7 @@
                         android:padding="4dp"
                         android:text="Publisher"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="17sp" />
 
                     <!--text view for displaying number of pages of book-->
                     <TextView
@@ -55,7 +55,7 @@
                         android:padding="4dp"
                         android:text="Number of Pages"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="17sp" />
 
                     <!--text view for displaying book publish date-->
                     <TextView
@@ -66,7 +66,7 @@
                         android:padding="4dp"
                         android:text="Publish Date"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -81,7 +81,7 @@
                 android:padding="4dp"
                 android:text="title"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="17sp" />
 
             <!--text view for displaying book subtitle-->
             <TextView
@@ -92,7 +92,7 @@
                 android:padding="4dp"
                 android:text="subtitle"
                 android:textColor="@color/black"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <!--text view for displaying book description-->
             <TextView
@@ -103,7 +103,7 @@
                 android:padding="4dp"
                 android:text="description"
                 android:textColor="@color/black"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
