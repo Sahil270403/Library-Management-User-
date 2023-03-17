@@ -13,4 +13,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string-array name="branch_options">
+        <item>IT</item>
+        <item>CSE</item>
+        <item>ECE</item>
+    </string-array>
 </resources>

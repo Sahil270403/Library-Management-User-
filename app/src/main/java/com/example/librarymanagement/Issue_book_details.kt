@@ -10,7 +10,6 @@ class Issue_book_details : AppCompatActivity() {
 
     private lateinit var binding: ActivityIssueBookDetailsBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityIssueBookDetailsBinding.inflate(layoutInflater)

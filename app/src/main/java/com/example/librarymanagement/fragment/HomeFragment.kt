@@ -1,13 +1,15 @@
 package com.example.librarymanagement.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.librarymanagement.BookAdapter
+import com.example.librarymanagement.*
 import com.example.librarymanagement.R
 import com.example.librarymanagement.models.book_details
 import com.google.firebase.database.*
@@ -18,10 +20,8 @@ class HomeFragment : Fragment() {
     private lateinit var userRecyclerview : RecyclerView
     private lateinit var userArrayList : ArrayList<book_details>
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         userRecyclerview = view.findViewById(R.id.sortNameRecyclerView)
         userRecyclerview.layoutManager = LinearLayoutManager(requireActivity())
@@ -30,6 +30,27 @@ class HomeFragment : Fragment() {
         userArrayList = arrayListOf<book_details>()
         getUserData()
 
+        val cseBookCard = view.findViewById<CardView>(R.id.CSEbook)
+        val itBookCard = view.findViewById<CardView>(R.id.ITbook)
+        val eceBookCard = view.findViewById<CardView>(R.id.ECEbook)
+
+
+
+        cseBookCard.setOnClickListener {
+            val intent = Intent(activity, CSEBooksActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        itBookCard.setOnClickListener {
+            val intent = Intent(activity, ITBooksActivity::class.java)
+            startActivity(intent)
+        }
+
+        eceBookCard.setOnClickListener {
+            val intent = Intent(activity, ECEBooksActivity::class.java)
+            startActivity(intent)
+        }
         return view
     }
 
