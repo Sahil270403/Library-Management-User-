@@ -55,14 +55,11 @@ class MainActivity : AppCompatActivity() {
     private fun signInGoogle(){
         val signInIntent = googleSignInClient.signInIntent
         launcher.launch(signInIntent)
-        anim = findViewById(R.id.animationView1)
-
     }
 
     private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result ->
         if (result.resultCode == Activity.RESULT_OK){
-            anim = findViewById(R.id.animationView1)
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
             handleResults(task)
             Toast.makeText(this,"Signing IN", Toast.LENGTH_SHORT ).show()
