@@ -42,26 +42,29 @@
         android:layout_marginTop="220dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/userName"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="220dp"
-        android:background="@drawable/input"
-        android:hint="Issuer Name"
-        android:textColorHint="@color/greeyLight"
-        android:textColor="@color/black"
-        android:paddingLeft="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:maxLines="1"
-        android:nextFocusDown="@id/rollNo"
-        android:inputType="textPersonName"/>
+        android:textColor="@color/black"
+        android:textColorHint="@color/greeyLight"> <!-- Set the hint text color here -->
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/input"
+            android:hint="Issuer Name"
+            android:textColorHint="@color/greeyLight"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:maxLines="1"
+            android:nextFocusDown="@id/rollNo"
+            android:inputType="textPersonName"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -70,7 +73,9 @@
         android:layout_marginTop="310dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textColorHint="@color/greeyLight">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/rollNo"
@@ -91,6 +96,7 @@
         android:nextFocusDown="@id/registerBtn"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
 
 
     <Spinner

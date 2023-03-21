@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.airbnb.lottie.LottieAnimationView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -20,13 +23,14 @@ import com.google.firebase.auth.GoogleAuthProvider
 class MainActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var anim: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = FirebaseAuth.getInstance()
 
-
+        anim = findViewById(R.id.animationView1)
         val check = GoogleSignIn.getLastSignedInAccount(this)
 
         if(check!=null){
@@ -44,19 +48,21 @@ class MainActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this , gso)
 
         findViewById<Button>(R.id.gSignInBtn).setOnClickListener {
+            anim.visibility = View.VISIBLE
             signInGoogle()
         }
     }
     private fun signInGoogle(){
         val signInIntent = googleSignInClient.signInIntent
         launcher.launch(signInIntent)
+        anim = findViewById(R.id.animationView1)
 
     }
 
     private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result ->
         if (result.resultCode == Activity.RESULT_OK){
-
+            anim = findViewById(R.id.animationView1)
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
             handleResults(task)
             Toast.makeText(this,"Signing IN", Toast.LENGTH_SHORT ).show()
@@ -82,6 +88,8 @@ class MainActivity : AppCompatActivity() {
 
         auth.signInWithCredential(credential).addOnCompleteListener{
             if(it.isSuccessful){
+                anim = findViewById(R.id.animationView1)
+                anim.visibility = View.INVISIBLE
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
                 finish()

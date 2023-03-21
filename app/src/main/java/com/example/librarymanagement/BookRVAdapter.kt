@@ -38,7 +38,7 @@ class BookRVAdapter(
             .load(bookInfo.thumbnail)
             .placeholder(R.drawable.books)
             .error(R.drawable.book)
-            .into(holder.bookIV);
+            .into(holder.bookIV)
         holder.bookTitleTV.text = bookInfo.title
         holder.bookPagesTV.text = "Pages : " + bookInfo.pageCount
 

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,10 +20,13 @@ class HomeFragment : Fragment() {
     private lateinit var dbref : DatabaseReference
     private lateinit var userRecyclerview : RecyclerView
     private lateinit var userArrayList : ArrayList<book_details>
-
+    private lateinit var ProgressBar:ProgressBar
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        ProgressBar = view.findViewById(R.id.progressBar)
+        ProgressBar.visibility = View.VISIBLE
+
         userRecyclerview = view.findViewById(R.id.sortNameRecyclerView)
         userRecyclerview.layoutManager = LinearLayoutManager(requireActivity())
         userRecyclerview.setHasFixedSize(true)
@@ -73,6 +77,7 @@ class HomeFragment : Fragment() {
 
              userRecyclerview.adapter = BookAdapter(userArrayList)
          }
+        ProgressBar.visibility = View.GONE
     }
 
 

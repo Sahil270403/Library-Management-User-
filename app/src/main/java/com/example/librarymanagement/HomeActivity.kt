@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.bumptech.glide.Glide
 import com.example.librarymanagement.databinding.ActivityHomeBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -27,6 +28,11 @@ class HomeActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this,R.id.activity_main_nav_host_fragment)
         setupWithNavController(binding.bottomNavigationView,navController)
         auth = FirebaseAuth.getInstance()
+
+//        Glide.with(this)
+//            .load(auth.currentUser!!.photoUrl)
+//            .error(R.drawable.book)
+//            .into(binding.imageView2)
 
 //        binding.gsignoutButton.setOnClickListener {
 //            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

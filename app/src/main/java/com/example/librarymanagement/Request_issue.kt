@@ -33,6 +33,7 @@ class Request_issue : AppCompatActivity() {
             val sBranch = binding.branchSpinner.selectedItem.toString()
             val currentDate = HashMap<String, Any>()
             currentDate["date"] = ServerValue.TIMESTAMP
+
             database = FirebaseDatabase.getInstance().getReference("Issue_details_request")
 
             val issue_details = issue_details(bookName ,authorName,branch,userName,rollNo,sBranch,currentDate)
