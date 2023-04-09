@@ -1,29 +1,47 @@
 package com.example.librarymanagement.fragment
 
-import android.app.Activity
-import android.content.Intent
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.librarymanagement.MainActivity
+import com.bumptech.glide.Glide
 import com.example.librarymanagement.R
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.example.librarymanagement.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 
-
 class ProfileFragment : Fragment() {
+    private lateinit var auth: FirebaseAuth
+    private var _binding: FragmentProfileBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        auth = FirebaseAuth.getInstance()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-
     ): View? {
-        // Inflate the layout for this fragment
-                return inflater.inflate(R.layout.fragment_profile, container, false)
-            }
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        Glide.with(this)
+            .load(auth.currentUser!!.photoUrl)
+            .error(R.drawable.book)
+            .into(binding.imageView2)
+
+        var mail = auth.currentUser!!.email
+        val name  = auth.currentUser!!.displayName
+
+        binding.mailname.text = "$name"
+        binding.mailid.text = "$mail"
+        return binding.root
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
