@@ -7,11 +7,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.librarymanagement.databinding.ActivityRequestIssueBinding
 import com.example.librarymanagement.models.issue_details
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ServerValue
 
 class Request_issue : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityRequestIssueBinding
     private lateinit var database : DatabaseReference
 
@@ -34,9 +36,12 @@ class Request_issue : AppCompatActivity() {
             val currentDate = HashMap<String, Any>()
             currentDate["date"] = ServerValue.TIMESTAMP
 
+            auth = FirebaseAuth.getInstance()
+
+            val uid = auth.currentUser!!.uid
             database = FirebaseDatabase.getInstance().getReference("Issue_details_request")
 
-            val issue_details = issue_details(bookName ,authorName,branch,userName,rollNo,sBranch,currentDate)
+            val issue_details = issue_details(bookName ,authorName,branch,userName,rollNo,sBranch,currentDate,uid)
 
             database.child(userName).setValue(issue_details).addOnSuccessListener {
 

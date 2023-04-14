@@ -28,10 +28,8 @@
         android:layout_height="180dp"
         app:cardElevation="700dp"
         app:cardCornerRadius="10dp"
-        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="70dp"
-        android:id="@+id/cardvid"
-        android:backgroundTint="@color/greeyL">
+        android:id="@+id/cardvid">
 
 
     <LinearLayout
@@ -84,18 +82,16 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="177dp"
+        android:layout_height="match_parent"
         app:cardElevation="700dp"
         app:cardCornerRadius="10dp"
-        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="270dp"
-        android:id="@+id/cardvid1"
-        android:backgroundTint="@color/greeyL">
+        android:id="@+id/cardvid1">
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             app:cardElevation="700dp"
             android:layout_marginTop="10dp"
             android:id="@+id/cardvid2"
@@ -116,9 +112,9 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             app:cardElevation="700dp"
-            android:layout_marginTop="63dp"
+            android:layout_marginTop="72dp"
             android:id="@+id/cardvid3"
             android:backgroundTint="@color/white">
 
@@ -136,9 +132,9 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             app:cardElevation="700dp"
-            android:layout_marginTop="116dp"
+            android:layout_marginTop="134dp"
             android:id="@+id/cardvid4"
             android:backgroundTint="@color/white">
 

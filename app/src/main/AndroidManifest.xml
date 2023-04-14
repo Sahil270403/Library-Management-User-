@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReturnedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BorrowedActivity"
+            android:exported="false" />
+        <activity
             android:name=".ECEBooksActivity"
             android:exported="false" />
         <activity
