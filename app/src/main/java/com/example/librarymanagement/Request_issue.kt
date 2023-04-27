@@ -30,29 +30,37 @@ class Request_issue : AppCompatActivity() {
 
         binding.registerBtn.setOnClickListener {
 
-            val userName = binding.userName.text.toString()
-            val rollNo = binding.rollNo.text.toString()
-            val sBranch = binding.branchSpinner.selectedItem.toString()
+            val userName = binding.userName.text.toString().trim()
+            val rollNo = binding.rollNo.text.toString().trim()
+            val sBranch = binding.branchSpinner.selectedItem.toString().trim()
             val currentDate = HashMap<String, Any>()
             currentDate["date"] = ServerValue.TIMESTAMP
 
             auth = FirebaseAuth.getInstance()
 
             val uid = auth.currentUser!!.uid
-            database = FirebaseDatabase.getInstance().getReference("Issue_details_request")
 
-            val issue_details = issue_details(bookName ,authorName,branch,userName,rollNo,sBranch,currentDate,uid)
-
-            database.child(userName).setValue(issue_details).addOnSuccessListener {
-
-
-                Toast.makeText(this,"Request Sent", Toast.LENGTH_SHORT).show()
-                finish()
-
-            }.addOnFailureListener{
-
-                Toast.makeText(this,"Failed", Toast.LENGTH_SHORT).show()
+            if(bookName!!.isEmpty() || authorName!!.isEmpty() || branch!!.isEmpty() || userName.isEmpty() || rollNo.isEmpty() || sBranch.isEmpty()){
+                Toast.makeText(this,"Empty Input",Toast.LENGTH_SHORT).show()
             }
+            else {
+                database = FirebaseDatabase.getInstance().getReference("Issue_details_request")
+
+                val issue_details = issue_details(bookName ,authorName,branch,userName,rollNo,sBranch,currentDate,uid)
+
+                database.child(userName).setValue(issue_details).addOnSuccessListener {
+
+
+                    Toast.makeText(this,"Request Sent", Toast.LENGTH_SHORT).show()
+                    finish()
+
+                }.addOnFailureListener{
+
+                    Toast.makeText(this,"Failed", Toast.LENGTH_SHORT).show()
+                }            }
+
+
+
         }
 
     }

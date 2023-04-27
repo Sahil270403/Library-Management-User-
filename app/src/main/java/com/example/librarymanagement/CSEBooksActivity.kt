@@ -29,7 +29,7 @@ class CSEBooksActivity : AppCompatActivity() {
         readAllData()
 
         binding.readdataBtn.setOnClickListener {
-            val userName : String = binding.etusername.text.toString()
+            val userName : String = binding.etusername.text.toString().trim()
             if  (userName.isNotEmpty()){
                 searchData(userName)
             }else{
