@@ -25,29 +25,29 @@ The **Library Management System - User App** is a mobile application designed to
 ## Screenshots
 
 ### Login Screen
-<img src="image/start.jpg" alt="Home Screen" width="500"
+<img src="image/start.jpg" alt="Home Screen" width="200">
 
 
 ### Home Screen
-<img src="image/home.jpg" alt="Home Screen" width="500">
+<img src="image/home.jpg" alt="Home Screen" width="200">
 
 ### Book Search
-<img src="image/search.jpg" alt="Home Screen" width="500">
+<img src="image/search.jpg" alt="Home Screen" width="200">
 
 ### Book Details
-<img src="image/book detail.jpg" alt="Home Screen" width="500">
+<img src="image/book detail.jpg" alt="Home Screen" width="200">
 
 ### Profile Page
-<img src="image/profile.jpg" alt="Home Screen" width="500">
+<img src="image/profile.jpg" alt="Home Screen" width="200">
 
 ### Search Books
-<img src="image/search.jpg" alt="Home Screen" width="500">
+<img src="image/search.jpg" alt="Home Screen" width="200">
 
 ### Result of Search
-<img src="image/result.jpg" alt="Home Screen" width="500">
+<img src="image/result.jpg" alt="Home Screen" width="200">
 
 ### Result Details
-<img src="image/result detils.jpg" alt="Home Screen" width="500">
+<img src="image/result detils.jpg" alt="Home Screen" width="200">
 
 ---
 
